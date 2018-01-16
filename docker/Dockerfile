@@ -2,7 +2,7 @@ FROM  tomcat:jre8-alpine
 
 COPY /therest.war /usr/local/tomcat/webapps/therest.war
 COPY /therest.xml /usr/local/tomcat/conf/Catalina/localhost/therest.xml 
-COPY /systemone.jar /usr/local/tomcat/lib/systemone.jar
+COPY /diva.jar /usr/local/tomcat/lib/diva.jar
 
 #build with:
 #maven build
