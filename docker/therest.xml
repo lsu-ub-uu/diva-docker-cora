@@ -11,4 +11,10 @@
 		override="false" />
 	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/"
 		override="false" />
+		<Parameter name="mixedStorageClassName" value="se.uu.ub.cora.diva.mixedstorage.DivaMixedRecordStorage"
+		override="false" />	  
+	<Parameter name="divaToCoraStorageClassName" value="se.uu.ub.cora.diva.tocorastorage.DivaToCoraRecordStorage"
+		override="false" />	  
+	<Parameter name="fedoraURL" value="http://diva-cora-fedora:8088/fedora/"
+		override="false" />
 </Context>
