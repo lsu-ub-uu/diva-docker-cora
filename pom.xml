@@ -1,22 +1,14 @@
-<!--
-  ~ Copyright 2018 Uppsala University Library
-  ~
-  ~ This file is part of Cora.
-  ~
-  ~     Cora is free software: you can redistribute it and/or modify
-  ~     it under the terms of the GNU General Public License as published by
-  ~     the Free Software Foundation, either version 3 of the License, or
-  ~     (at your option) any later version.
-  ~
-  ~     Cora is distributed in the hope that it will be useful,
-  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
-  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  ~     GNU General Public License for more details.
-  ~
-  ~     You should have received a copy of the GNU General Public License
-  ~     along with Cora.  If not, see <http://www.gnu.org/licenses/>.
-  -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<!-- ~ Copyright 2018 Uppsala University Library ~ ~ This file is part of 
+	Cora. ~ ~ Cora is free software: you can redistribute it and/or modify ~ 
+	it under the terms of the GNU General Public License as published by ~ the 
+	Free Software Foundation, either version 3 of the License, or ~ (at your 
+	option) any later version. ~ ~ Cora is distributed in the hope that it will 
+	be useful, ~ but WITHOUT ANY WARRANTY; without even the implied warranty 
+	of ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the ~ GNU General 
+	Public License for more details. ~ ~ You should have received a copy of the 
+	GNU General Public License ~ along with Cora. If not, see <http://www.gnu.org/licenses/>. -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -35,6 +27,8 @@
 		<outputDirectory>${project.build.directory}/docker</outputDirectory>
 		<diva.version>0.1-SNAPSHOT</diva.version>
 		<therest.version>0.15-SNAPSHOT</therest.version>
+		<cora-metadata.version>0.1-SNAPSHOT</cora-metadata.version>
+		<diva-metadata.version>0.1-SNAPSHOT</diva-metadata.version>
 	</properties>
 
 	<scm>
@@ -117,22 +111,76 @@
 							<stripVersion>true</stripVersion>
 						</configuration>
 					</execution>
+					<execution>
+						<id>unpack</id>
+						<phase>package</phase>
+						<goals>
+							<goal>unpack</goal>
+						</goals>
+						<configuration>
+							<artifactItems>
+								<artifactItem>
+									<groupId>se.uu.ub.cora</groupId>
+									<artifactId>cora-metadata</artifactId>
+									<version>${cora-metadata.version}</version>
+									<type>jar</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.build.directory}/docker</outputDirectory>
+									<includes>**/*.json</includes>
+								</artifactItem>
+								<artifactItem>
+									<groupId>se.uu.ub.cora</groupId>
+									<artifactId>diva-metadata</artifactId>
+									<version>${diva-metadata.version}</version>
+									<type>jar</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.build.directory}/docker</outputDirectory>
+									<includes>**/*.json</includes>
+								</artifactItem>
+							</artifactItems>
+							<includes>**/*.java</includes>
+							<excludes>**/*.properties</excludes>
+							<outputDirectory>${project.build.directory}/wars</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>true</overWriteSnapshots>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
+			<!-- <plugin> -->
+			<!-- <groupId>com.spotify</groupId> -->
+			<!-- <artifactId>dockerfile-maven-plugin</artifactId> -->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <id>default</id> -->
+			<!-- <goals> -->
+			<!-- <goal>build</goal> -->
+			<!-- </goals> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- <configuration> -->
+			<!-- <contextDirectory>${outputDirectory}</contextDirectory> -->
+			<!-- <repository>diva-cora</repository> -->
+			<!-- </configuration> -->
+			<!-- </plugin> -->
 			<plugin>
 				<groupId>com.spotify</groupId>
-				<artifactId>dockerfile-maven-plugin</artifactId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<!-- <version>0.4.13</version> -->
 				<executions>
 					<execution>
-						<id>default</id>
+						<id>build-image</id>
+						<phase>package</phase>
 						<goals>
 							<goal>build</goal>
 						</goals>
 					</execution>
 				</executions>
 				<configuration>
-					<contextDirectory>${outputDirectory}</contextDirectory>
-					<repository>diva-cora</repository>
+					<imageName>therest</imageName>
+					<dockerDirectory>docker</dockerDirectory>
+					<resources>
+					</resources>
 				</configuration>
 			</plugin>
 		</plugins>
