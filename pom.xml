@@ -55,6 +55,18 @@
 	<dependencies>
 		<dependency>
 			<groupId>se.uu.ub.cora</groupId>
+			<artifactId>cora-metadata</artifactId>
+			<version>${cora-metadata.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>se.uu.ub.cora</groupId>
+			<artifactId>diva-metadata</artifactId>
+			<version>${diva-metadata.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>se.uu.ub.cora</groupId>
 			<artifactId>diva</artifactId>
 			<version>${diva.version}</version>
 			<scope>compile</scope>
