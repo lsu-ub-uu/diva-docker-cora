@@ -24,11 +24,14 @@
 	<name>DiVA cora docker</name>
 
 	<properties>
-		<outputDirectory>${project.build.directory}/docker</outputDirectory>
+<!-- 		<outputDirectory>${project.build.directory}/docker</outputDirectory> -->
 		<diva.version>0.1-SNAPSHOT</diva.version>
 		<therest.version>0.15-SNAPSHOT</therest.version>
 		<cora-metadata.version>0.1-SNAPSHOT</cora-metadata.version>
 		<diva-metadata.version>0.1-SNAPSHOT</diva-metadata.version>
+	
+		<systemone-metadata.version>0.1-SNAPSHOT</systemone-metadata.version>
+	
 	</properties>
 
 	<scm>
@@ -65,6 +68,14 @@
 			<version>${diva-metadata.version}</version>
 			<scope>compile</scope>
 		</dependency>
+		
+		<dependency>
+			<groupId>se.uu.ub.cora</groupId>
+			<artifactId>systemone-metadata</artifactId>
+			<version>${systemone-metadata.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		
 		<dependency>
 			<groupId>se.uu.ub.cora</groupId>
 			<artifactId>diva</artifactId>
@@ -83,26 +94,6 @@
 	<build>
 		<plugins>
 			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${outputDirectory}</outputDirectory>
-							<resources>
-								<resource>
-									<directory>docker</directory>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>3.0.0</version>
@@ -114,7 +105,7 @@
 							<goal>copy-dependencies</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${outputDirectory}</outputDirectory>
+							<outputDirectory>${project.build.directory}/docker</outputDirectory>
 							<excludeArtifactIds>basicstorage</excludeArtifactIds>
 							<overWriteReleases>true</overWriteReleases>
 							<overWriteSnapshots>true</overWriteSnapshots>
@@ -149,6 +140,17 @@
 									<outputDirectory>${project.build.directory}/docker</outputDirectory>
 									<includes>**/*.json</includes>
 								</artifactItem>
+								
+								<artifactItem>
+									<groupId>se.uu.ub.cora</groupId>
+									<artifactId>systemone-metadata</artifactId>
+									<version>${systemone-metadata.version}</version>
+									<type>jar</type>
+									<overWrite>true</overWrite>
+									<outputDirectory>${project.build.directory}/docker</outputDirectory>
+									<includes>**/*.json</includes>
+								</artifactItem>
+								
 							</artifactItems>
 							<includes>**/*.java</includes>
 							<excludes>**/*.properties</excludes>
@@ -159,26 +161,9 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!-- <plugin> -->
-			<!-- <groupId>com.spotify</groupId> -->
-			<!-- <artifactId>dockerfile-maven-plugin</artifactId> -->
-			<!-- <executions> -->
-			<!-- <execution> -->
-			<!-- <id>default</id> -->
-			<!-- <goals> -->
-			<!-- <goal>build</goal> -->
-			<!-- </goals> -->
-			<!-- </execution> -->
-			<!-- </executions> -->
-			<!-- <configuration> -->
-			<!-- <contextDirectory>${outputDirectory}</contextDirectory> -->
-			<!-- <repository>diva-cora</repository> -->
-			<!-- </configuration> -->
-			<!-- </plugin> -->
 			<plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>docker-maven-plugin</artifactId>
-				<!-- <version>0.4.13</version> -->
 				<executions>
 					<execution>
 						<id>build-image</id>
@@ -189,7 +174,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<imageName>therest</imageName>
+					<imageName>diva-cora</imageName>
 					<dockerDirectory>docker</dockerDirectory>
 					<resources>
 					</resources>
