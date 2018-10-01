@@ -24,8 +24,7 @@
 	<name>DiVA cora docker</name>
 
 	<properties>
-<!-- 		<outputDirectory>${project.build.directory}/docker</outputDirectory> -->
-		<diva.version>0.1-SNAPSHOT</diva.version>
+		<diva.version>0.2-SNAPSHOT</diva.version>
 		<therest.version>0.15-SNAPSHOT</therest.version>
 		<cora-metadata.version>0.1-SNAPSHOT</cora-metadata.version>
 		<diva-metadata.version>0.1-SNAPSHOT</diva-metadata.version>
