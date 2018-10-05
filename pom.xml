@@ -15,21 +15,21 @@
 	<parent>
 		<groupId>se.uu.ub.cora</groupId>
 		<artifactId>cora-parent</artifactId>
-		<version>0.6-SNAPSHOT</version>
+		<version>0.7-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>diva-docker-cora</artifactId>
 	<packaging>pom</packaging>
-	<version>0.2-SNAPSHOT</version>
+	<version>0.3-SNAPSHOT</version>
 	<name>DiVA cora docker</name>
 
 	<properties>
-		<diva.version>0.2-SNAPSHOT</diva.version>
-		<therest.version>0.15-SNAPSHOT</therest.version>
-		<cora-metadata.version>0.1-SNAPSHOT</cora-metadata.version>
-		<diva-metadata.version>0.1-SNAPSHOT</diva-metadata.version>
+		<diva.version>0.3-SNAPSHOT</diva.version>
+		<therest.version>0.16-SNAPSHOT</therest.version>
+		<cora-metadata.version>0.2-SNAPSHOT</cora-metadata.version>
+		<diva-metadata.version>0.2-SNAPSHOT</diva-metadata.version>
 	
-		<systemone-metadata.version>0.1-SNAPSHOT</systemone-metadata.version>
+		<systemone-metadata.version>0.2-SNAPSHOT</systemone-metadata.version>
 	
 	</properties>
 
@@ -38,21 +38,6 @@
 		<developerConnection>scm:git:https://github.com/lsu-ub-uu/diva-docker-cora.git</developerConnection>
 		<url>https://github.com/lsu-ub-uu/diva-docker-cora.git</url>
 	</scm>
-
-	<repositories>
-		<repository>
-			<id>maven-public</id>
-			<name>LSU Nexus Repository</name>
-			<url>http://epc.ub.uu.se/nexus/repository/maven-public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<updatePolicy>daily</updatePolicy>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -95,7 +80,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.0.0</version>
+				<version>3.1.1</version>
 				<executions>
 					<execution>
 						<id>copy-dependencies</id>
