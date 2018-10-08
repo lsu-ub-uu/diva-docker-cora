@@ -1,4 +1,4 @@
-FROM  tomcat:jre8-alpine
+FROM  tomcat:9.0-jre10-slim
 
 COPY /storagefiles /mnt/data/basicstorage
 
