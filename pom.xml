@@ -1,12 +1,21 @@
-<!-- ~ Copyright 2018 Uppsala University Library ~ ~ This file is part of 
-	Cora. ~ ~ Cora is free software: you can redistribute it and/or modify ~ 
-	it under the terms of the GNU General Public License as published by ~ the 
-	Free Software Foundation, either version 3 of the License, or ~ (at your 
-	option) any later version. ~ ~ Cora is distributed in the hope that it will 
-	be useful, ~ but WITHOUT ANY WARRANTY; without even the implied warranty 
-	of ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the ~ GNU General 
-	Public License for more details. ~ ~ You should have received a copy of the 
-	GNU General Public License ~ along with Cora. If not, see <http://www.gnu.org/licenses/>. -->
+<!--
+  ~ Copyright 2018 Uppsala University Library
+  ~
+  ~ This file is part of Cora.
+  ~
+  ~     Cora is free software: you can redistribute it and/or modify
+  ~     it under the terms of the GNU General Public License as published by
+  ~     the Free Software Foundation, either version 3 of the License, or
+  ~     (at your option) any later version.
+  ~
+  ~     Cora is distributed in the hope that it will be useful,
+  ~     but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~     GNU General Public License for more details.
+  ~
+  ~     You should have received a copy of the GNU General Public License
+  ~     along with Cora.  If not, see <http://www.gnu.org/licenses/>.
+  -->
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -24,13 +33,15 @@
 	<name>DiVA cora docker</name>
 
 	<properties>
+		<outputDirectory>${project.build.directory}/docker2</outputDirectory>
+
 		<diva.version>0.3-SNAPSHOT</diva.version>
 		<therest.version>0.16-SNAPSHOT</therest.version>
 		<cora-metadata.version>0.2-SNAPSHOT</cora-metadata.version>
 		<diva-metadata.version>0.2-SNAPSHOT</diva-metadata.version>
-	
+
 		<systemone-metadata.version>0.2-SNAPSHOT</systemone-metadata.version>
-	
+
 	</properties>
 
 	<scm>
@@ -52,14 +63,14 @@
 			<version>${diva-metadata.version}</version>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>se.uu.ub.cora</groupId>
 			<artifactId>systemone-metadata</artifactId>
 			<version>${systemone-metadata.version}</version>
 			<scope>compile</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>se.uu.ub.cora</groupId>
 			<artifactId>diva</artifactId>
@@ -78,6 +89,26 @@
 	<build>
 		<plugins>
 			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${outputDirectory}</outputDirectory>
+							<resources>
+								<resource>
+									<directory>docker</directory>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>3.1.1</version>
@@ -89,8 +120,9 @@
 							<goal>copy-dependencies</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/docker</outputDirectory>
-							<excludeArtifactIds>basicstorage</excludeArtifactIds>
+							<outputDirectory>${outputDirectory}</outputDirectory>
+							<excludeArtifactIds>cora-metadata, alvin-metadata,
+								systemone-metadata</excludeArtifactIds>
 							<overWriteReleases>true</overWriteReleases>
 							<overWriteSnapshots>true</overWriteSnapshots>
 							<overWriteIfNewer>true</overWriteIfNewer>
@@ -110,36 +142,24 @@
 									<groupId>se.uu.ub.cora</groupId>
 									<artifactId>cora-metadata</artifactId>
 									<version>${cora-metadata.version}</version>
-									<type>jar</type>
-									<overWrite>true</overWrite>
-									<outputDirectory>${project.build.directory}/docker</outputDirectory>
-									<includes>**/*.json</includes>
 								</artifactItem>
 								<artifactItem>
 									<groupId>se.uu.ub.cora</groupId>
 									<artifactId>diva-metadata</artifactId>
 									<version>${diva-metadata.version}</version>
-									<type>jar</type>
-									<overWrite>true</overWrite>
-									<outputDirectory>${project.build.directory}/docker</outputDirectory>
-									<includes>**/*.json</includes>
 								</artifactItem>
-								
+
 								<artifactItem>
 									<groupId>se.uu.ub.cora</groupId>
 									<artifactId>systemone-metadata</artifactId>
 									<version>${systemone-metadata.version}</version>
-									<type>jar</type>
-									<overWrite>true</overWrite>
-									<outputDirectory>${project.build.directory}/docker</outputDirectory>
-									<includes>**/*.json</includes>
 								</artifactItem>
-								
+
 							</artifactItems>
-							<includes>**/*.java</includes>
-							<excludes>**/*.properties</excludes>
-							<outputDirectory>${project.build.directory}/wars</outputDirectory>
-							<overWriteReleases>false</overWriteReleases>
+							<includes>**/*.json</includes>
+							<outputDirectory>${outputDirectory}</outputDirectory>
+							<overWrite>true</overWrite>
+							<overWriteReleases>true</overWriteReleases>
 							<overWriteSnapshots>true</overWriteSnapshots>
 						</configuration>
 					</execution>
@@ -147,21 +167,10 @@
 			</plugin>
 			<plugin>
 				<groupId>com.spotify</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>build-image</id>
-						<phase>package</phase>
-						<goals>
-							<goal>build</goal>
-						</goals>
-					</execution>
-				</executions>
+				<artifactId>dockerfile-maven-plugin</artifactId>
 				<configuration>
-					<imageName>diva-cora</imageName>
-					<dockerDirectory>docker</dockerDirectory>
-					<resources>
-					</resources>
+					<contextDirectory>${outputDirectory}</contextDirectory>
+					<repository>diva-cora</repository>
 				</configuration>
 			</plugin>
 		</plugins>
