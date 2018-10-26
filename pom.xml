@@ -157,6 +157,7 @@
 
 							</artifactItems>
 							<includes>**/*.json</includes>
+							<includes>**/*.json.gz</includes>
 							<outputDirectory>${outputDirectory}</outputDirectory>
 							<overWrite>true</overWrite>
 							<overWriteReleases>true</overWriteReleases>
