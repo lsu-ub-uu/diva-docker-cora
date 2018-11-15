@@ -40,8 +40,6 @@
 		<cora-metadata.version>0.2-SNAPSHOT</cora-metadata.version>
 		<diva-metadata.version>0.2-SNAPSHOT</diva-metadata.version>
 
-		<systemone-metadata.version>0.2-SNAPSHOT</systemone-metadata.version>
-
 	</properties>
 
 	<scm>
@@ -63,14 +61,6 @@
 			<version>${diva-metadata.version}</version>
 			<scope>compile</scope>
 		</dependency>
-
-		<dependency>
-			<groupId>se.uu.ub.cora</groupId>
-			<artifactId>systemone-metadata</artifactId>
-			<version>${systemone-metadata.version}</version>
-			<scope>compile</scope>
-		</dependency>
-
 		<dependency>
 			<groupId>se.uu.ub.cora</groupId>
 			<artifactId>diva</artifactId>
@@ -121,8 +111,7 @@
 						</goals>
 						<configuration>
 							<outputDirectory>${outputDirectory}</outputDirectory>
-							<excludeArtifactIds>cora-metadata, alvin-metadata,
-								systemone-metadata</excludeArtifactIds>
+							<excludeArtifactIds>cora-metadata, alvin-metadata</excludeArtifactIds>
 							<overWriteReleases>true</overWriteReleases>
 							<overWriteSnapshots>true</overWriteSnapshots>
 							<overWriteIfNewer>true</overWriteIfNewer>
@@ -148,13 +137,6 @@
 									<artifactId>diva-metadata</artifactId>
 									<version>${diva-metadata.version}</version>
 								</artifactItem>
-
-								<artifactItem>
-									<groupId>se.uu.ub.cora</groupId>
-									<artifactId>systemone-metadata</artifactId>
-									<version>${systemone-metadata.version}</version>
-								</artifactItem>
-
 							</artifactItems>
 							<includes>**/*.json*</includes>
 							<outputDirectory>${outputDirectory}</outputDirectory>
