@@ -35,8 +35,8 @@
 	<properties>
 		<outputDirectory>${project.build.directory}/docker2</outputDirectory>
 
-		<diva.version>0.5.0</diva.version>
-		<therest.version>0.17.0</therest.version>
+		<diva.version>0.6.0</diva.version>
+		<therest.version>0.18.0</therest.version>
 		<cora-metadata.version>0.2-SNAPSHOT</cora-metadata.version>
 		<diva-metadata.version>0.2-SNAPSHOT</diva-metadata.version>
 
