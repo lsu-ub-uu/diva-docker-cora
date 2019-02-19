@@ -15,8 +15,10 @@
 		override="false" />	  
 	<Parameter name="divaFedoraToCoraStorageClassName" value="se.uu.ub.cora.diva.tocorastorage.fedora.DivaToCoraRecordStorage"
 		override="false" />	  
-	<Parameter name="fedoraURL" value="http://diva-cora-fedora:8088/fedora/"
+	<Parameter name="fedoraURL" value="https://diva-cora-fedora:8443/fedora/"
 		override="false" />
+	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false"/>
+	<Parameter name="fedoraPassword" value="changeit" override="false"/>
 		
 		<Parameter name="divaDbToCoraStorageClassName" value="se.uu.ub.cora.diva.tocorastorage.db.DivaDbToCoraRecordStorage"
 			override="false" />
