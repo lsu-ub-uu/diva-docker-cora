@@ -13,14 +13,14 @@
 		override="false" />
 		<Parameter name="mixedStorageClassName" value="se.uu.ub.cora.diva.mixedstorage.DivaMixedRecordStorage"
 		override="false" />	  
-	<Parameter name="divaFedoraToCoraStorageClassName" value="se.uu.ub.cora.diva.tocorastorage.fedora.DivaFedoraRecordStorage"
+	<Parameter name="divaFedoraToCoraStorageClassName" value="se.uu.ub.cora.diva.mixedstorage.fedora.DivaFedoraRecordStorage"
 		override="false" />	  
 	<Parameter name="fedoraURL" value="https://diva-cora-fedora:8443/fedora/"
 		override="false" />
 	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false"/>
 	<Parameter name="fedoraPassword" value="changeit" override="false"/>
 		
-		<Parameter name="divaDbToCoraStorageClassName" value="se.uu.ub.cora.diva.tocorastorage.db.DivaDbToCoraRecordStorage"
+		<Parameter name="divaDbToCoraStorageClassName" value="se.uu.ub.cora.diva.mixedstorage.db.DivaDbToCoraRecordStorage"
 			override="false" />
 		<Parameter name="databaseLookupName" value="java:/comp/env/jdbc/postgres"
 			override="false" />
