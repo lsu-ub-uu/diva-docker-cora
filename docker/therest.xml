@@ -1,7 +1,7 @@
 <Context>
 	<Parameter name="dependencyProviderClassName"
 		value="se.uu.ub.cora.diva.DivaDependencyProvider" override="false" />
-	<Parameter name="gatekeeperURL" value="http://gatekeeper:8080/gatekeeper/"
+	<Parameter name="gatekeeperURL" value="http://gatekeeper:8080/gatekeeperserver/"
 		override="false" />
 	<Parameter name="storageOnDiskClassName" value="se.uu.ub.cora.storage.RecordStorageInMemoryReadFromDisk"
 		override="false" />	  
