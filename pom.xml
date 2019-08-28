@@ -35,8 +35,7 @@
 	<properties>
 		<outputDirectory>${project.build.directory}/docker2</outputDirectory>
 
-		<diva.version>1.0.0</diva.version>
-		<therest.version>1.0.0</therest.version>
+		<diva.version>1.3.0</diva.version>
 		<cora-metadata.version>0.2-SNAPSHOT</cora-metadata.version>
 		<diva-metadata.version>0.2-SNAPSHOT</diva-metadata.version>
 
@@ -65,12 +64,6 @@
 			<groupId>se.uu.ub.cora</groupId>
 			<artifactId>diva</artifactId>
 			<version>${diva.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>se.uu.ub.cora</groupId>
-			<artifactId>therest</artifactId>
-			<version>${therest.version}</version>
 			<type>war</type>
 			<scope>compile</scope>
 		</dependency>
@@ -115,8 +108,8 @@
 							<overWriteReleases>true</overWriteReleases>
 							<overWriteSnapshots>true</overWriteSnapshots>
 							<overWriteIfNewer>true</overWriteIfNewer>
-							<excludeTransitive>true</excludeTransitive>
-							<stripVersion>true</stripVersion>
+<!-- 							<excludeTransitive>true</excludeTransitive> -->
+<!-- 							<stripVersion>true</stripVersion> -->
 						</configuration>
 					</execution>
 					<execution>

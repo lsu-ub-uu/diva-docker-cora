@@ -2,9 +2,10 @@ FROM  tomcat:9.0-jre11-slim
 
 COPY /storagefiles /mnt/data/basicstorage
 
-COPY /therest.war /usr/local/tomcat/webapps/therest.war
-COPY /therest.xml /usr/local/tomcat/conf/Catalina/localhost/therest.xml 
-COPY /diva.jar /usr/local/tomcat/lib/diva.jar
+COPY /diva*.war /usr/local/tomcat/webapps/diva.war
+COPY /diva.xml /usr/local/tomcat/conf/Catalina/localhost/diva.xml 
+
+COPY /*.properties /usr/local/tomcat/lib/
 
 COPY files/fedoraKeystore.jks /usr/local/tomcat/fedoraKeystore.jks
 
