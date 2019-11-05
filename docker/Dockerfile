@@ -1,4 +1,4 @@
-FROM  tomcat:9.0-jre11-slim
+FROM  tomcat:9.0.27-jdk12-adoptopenjdk-hotspot
 
 COPY /storagefiles /mnt/data/basicstorage
 
