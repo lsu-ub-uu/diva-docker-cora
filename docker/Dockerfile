@@ -1,6 +1,8 @@
 FROM  tomcat:9.0.27-jdk12-adoptopenjdk-hotspot
 
-COPY /storagefiles /mnt/data/basicstorage
+COPY /storagefiles/cora /mnt/data/basicstorage/cora
+COPY /storagefiles/jsClient /mnt/data/basicstorage/jsClient
+COPY /storagefiles/diva /mnt/data/basicstorage/diva
 
 COPY /diva*.war /usr/local/tomcat/webapps/diva.war
 COPY /diva.xml /usr/local/tomcat/conf/Catalina/localhost/diva.xml 
