@@ -1,4 +1,5 @@
-FROM  tomcat:9.0.27-jdk12-adoptopenjdk-hotspot
+ARG CORA_DOCKER_VERSION
+FROM cora-docker-tomcat:${CORA_DOCKER_VERSION}
 
 COPY /storagefiles/cora /mnt/data/basicstorage/cora
 COPY /storagefiles/jsClient /mnt/data/basicstorage/jsClient
