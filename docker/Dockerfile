@@ -4,6 +4,7 @@ FROM cora-docker-tomcat:${CORA_DOCKER_VERSION}
 COPY /storagefiles/cora /mnt/data/basicstorage/cora
 COPY /storagefiles/jsClient /mnt/data/basicstorage/jsClient
 COPY /storagefiles/diva /mnt/data/basicstorage/diva
+COPY /storagefiles/divaTestSystem /mnt/data/basicstorage/divaTestSystem
 
 COPY /diva*.war /usr/local/tomcat/webapps/diva.war
 COPY /diva.xml /usr/local/tomcat/conf/Catalina/localhost/diva.xml 
