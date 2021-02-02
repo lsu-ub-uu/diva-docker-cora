@@ -23,4 +23,6 @@
 			url="jdbc:postgresql://diva-cora-docker-postgresql:5432/diva"
 			username="diva" password="diva" maxTotal="20" maxIdle="10"
 			maxWaitMillis="-1" />
+	<!-- Empty value will not call Classic. -->
+	<Parameter name="classicListUpdateURL" value="" override="false"/> 
 </Context>
