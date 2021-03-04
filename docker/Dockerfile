@@ -5,6 +5,7 @@ COPY /storagefiles/cora /mnt/data/basicstorage/cora
 COPY /storagefiles/jsClient /mnt/data/basicstorage/jsClient
 COPY /storagefiles/diva /mnt/data/basicstorage/diva
 COPY /storagefiles/divaTestSystem /mnt/data/basicstorage/divaTestSystem
+COPY /storagefiles/divaProdSystem /mnt/data/basicstorage/divaProdSystem
 
 COPY /diva*.war /usr/local/tomcat/webapps/diva.war
 COPY /diva.xml /usr/local/tomcat/conf/Catalina/localhost/diva.xml 
