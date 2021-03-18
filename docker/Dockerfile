@@ -16,6 +16,10 @@ COPY files/fedoraKeystore.jks /usr/local/tomcat/fedoraKeystore.jks
 
 ENV JAVA_OPTS="-Djavax.net.ssl.trustStore=/usr/local/tomcat/fedoraKeystore.jks -Djavax.net.ssl.trustStorePassword=changeit"
 
+COPY ./entrypoint.sh .
+RUN chmod a+x ./entrypoint.sh
+CMD  ./entrypoint.sh
+#CMD ["catalina.sh", "run"]
 #build with:
 #maven build
 
