@@ -32,7 +32,7 @@
 		<cora-metadata.version>0.4-SNAPSHOT</cora-metadata.version>
 		<diva-metadata.version>0.3-SNAPSHOT</diva-metadata.version>
 
-		<diva.version>4.5-SNAPSHOT</diva.version>
+		<diva.version>4.6-SNAPSHOT</diva.version>
 	</properties>
 
 	<scm>
