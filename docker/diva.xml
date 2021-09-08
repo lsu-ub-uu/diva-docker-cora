@@ -20,7 +20,7 @@
 			override="false" />
 	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
 			driverClassName="org.postgresql.Driver"
-			url="jdbc:postgresql://diva-cora-docker-postgresql:5432/diva"
+			url="jdbc:postgresql://diva-docker-mock-classic-postgresql:5432/diva"
 			username="diva" password="diva" maxTotal="20" maxIdle="10"
 			maxWaitMillis="-1" />
 	<!-- Empty value will not call Classic. -->
