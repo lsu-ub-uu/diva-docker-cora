@@ -9,7 +9,7 @@
 		override="false" />
 	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/"
 		override="false" />
-	<Parameter name="fedoraURL" value="https://diva-cora-fedora:8443/fedora/"
+	<Parameter name="fedoraURL" value="http://diva-fitnesse-httplistener:11111/fedoraURL/"
 		override="false" />
 	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false"/>
 	<Parameter name="fedoraPassword" value="changeit" override="false"/>
@@ -31,5 +31,6 @@
 		maxWaitMillis="-1" />
 		
 	<!-- Empty value will not call Classic. -->
-	<Parameter name="classicListUpdateURL" value="" override="false"/> 
+	<Parameter name="classicListUpdateURL" value="http://diva-fitnesse-httplistener:11111/classicListUpdateURL/" override="false"/> 
+	<Parameter name="authorityIndexUrl" value="http://diva-fitnesse-httplistener:11111/authorityIndexUrl/" override="false" />
 </Context>
