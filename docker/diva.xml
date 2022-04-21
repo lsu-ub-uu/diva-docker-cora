@@ -11,7 +11,7 @@
 		override="false" />
 	<Parameter name="fedoraURL" value="http://diva-fitnesse-httplistener:11111/fedoraURL/"
 		override="false" />
-	<Parameter name="fedoraArchiveURL" value="http://diva-docker-fedora:8080/fcrepo/rest/" override="false" />
+	<Parameter name="fedoraArchiveURL" value="http://diva-archive:8080/fcrepo/rest/" override="false" />
 	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false"/>
 	<Parameter name="fedoraPassword" value="changeit" override="false"/>
 	
