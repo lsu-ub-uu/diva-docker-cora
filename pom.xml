@@ -15,7 +15,7 @@
 	<parent>
 		<groupId>se.uu.ub.cora</groupId>
 		<artifactId>cora-parent</artifactId>
-		<version>2.0.0</version>
+		<version>2.3.0</version>
 	</parent>
 
 	<artifactId>diva-docker-cora</artifactId>
@@ -29,10 +29,10 @@
 
 		<cora-docker-tomcat.version>2.1.0</cora-docker-tomcat.version>
 
-		<cora-metadata.version>0.6-SNAPSHOT</cora-metadata.version>
-		<diva-metadata.version>0.4-SNAPSHOT</diva-metadata.version>
+		<cora-metadata.version>1.0-SNAPSHOT</cora-metadata.version>
+		<diva-metadata.version>1.0-SNAPSHOT</diva-metadata.version>
 
-		<diva.version>7.4-SNAPSHOT</diva.version>
+		<diva.version>8.0-SNAPSHOT</diva.version>
 	</properties>
 
 	<scm>
