@@ -1,37 +1,29 @@
 <Context>
+	
+	
 	<Parameter name="dependencyProviderClassName"
 		value="se.uu.ub.cora.therest.initialize.TheRestDependencyProvider" override="false" />
+		
 	<Parameter name="gatekeeperURL" value="http://gatekeeper:8080/gatekeeperserver/"
 		override="false" />
+		
 	<Parameter name="storageOnDiskBasePath" value="/mnt/data/basicstorage/"
 		override="false" />
+		
 	<Parameter name="solrURL" value="http://solr:8983/solr/coracore"
 		override="false" />
+		
 	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/"
 		override="false" />
-	<Parameter name="fedoraURL" value="http://diva-fitnesse-httplistener:11111/fedoraURL/"
-		override="false" />
-	<Parameter name="fedoraArchiveURL" value="http://diva-archive:8080/fcrepo/rest/" override="false" />
-	<Parameter name="fedoraUsername" value="fedoraAdmin" override="false"/>
-	<Parameter name="fedoraPassword" value="changeit" override="false"/>
-	
-	<Parameter name="storageType" value="memory" override="false" />
 
-	<Parameter name="coraDatabaseLookupName" value="java:/comp/env/jdbc/coraPostgres" override="false" />
+
+	<Parameter name="fedoraArchiveURL" value="http://diva-archive:8080/fcrepo/rest/" override="false" />
+	
+	<Parameter name="coraDatabaseLookupName" value="java:/comp/env/jdbc/coraPostgres"
+		override="false" />
 	<Resource name="jdbc/coraPostgres" auth="Container" type="javax.sql.DataSource"
 		driverClassName="org.postgresql.Driver"
-		url="jdbc:postgresql://diva-cora-docker-postgresql:5432/diva"
-		username="diva" password="diva" maxTotal="20" maxIdle="10"
-		maxWaitMillis="-1" />
+		url="jdbc:postgresql://diva-postgresql:5432/diva" username="diva" password="diva"
+		maxTotal="20" maxIdle="10" maxWaitMillis="-1" />
 
-	<Parameter name="databaseLookupName" value="java:/comp/env/jdbc/postgres" override="false" />
-	<Resource name="jdbc/postgres" auth="Container" type="javax.sql.DataSource"
-		driverClassName="org.postgresql.Driver"
-		url="jdbc:postgresql://diva-docker-mock-classic-postgresql:5432/diva"
-		username="diva" password="diva" maxTotal="20" maxIdle="10"
-		maxWaitMillis="-1" />
-		
-	<!-- Empty value will not call Classic. -->
-	<Parameter name="classicListUpdateURL" value="http://diva-fitnesse-httplistener:11111/classicListUpdateURL/" override="false"/> 
-	<Parameter name="authorityIndexUrl" value="http://diva-fitnesse-httplistener:11111/authorityIndexUrl/" override="false" />
 </Context>
