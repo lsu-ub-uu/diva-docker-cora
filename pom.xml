@@ -30,7 +30,7 @@
 		<cora-docker-tomcat.version>2.2.0</cora-docker-tomcat.version>
 
 		<cora-metadata.version>1.0-SNAPSHOT</cora-metadata.version>
-		<diva-metadata.version>1.0-SNAPSHOT</diva-metadata.version>
+		<diva-metadata.version>1.1-SNAPSHOT</diva-metadata.version>
 
 		<diva.version>8.1-SNAPSHOT</diva.version>
 	</properties>
