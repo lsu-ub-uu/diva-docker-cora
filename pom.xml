@@ -27,7 +27,7 @@
 		<outputDirectory>${project.build.directory}/docker2</outputDirectory>
 		<exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
 
-		<cora-docker-tomcat.version>2.1.0</cora-docker-tomcat.version>
+		<cora-docker-tomcat.version>2.2.0</cora-docker-tomcat.version>
 
 		<cora-metadata.version>1.0-SNAPSHOT</cora-metadata.version>
 		<diva-metadata.version>1.0-SNAPSHOT</diva-metadata.version>
