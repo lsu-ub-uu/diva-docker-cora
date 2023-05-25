@@ -7,9 +7,7 @@
 	of ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the ~ GNU General 
 	Public License for more details. ~ ~ You should have received a copy of the 
 	GNU General Public License ~ along with Cora. If not, see <http://www.gnu.org/licenses/>. -->
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -24,15 +22,11 @@
 	<name>DiVA cora docker</name>
 
 	<properties>
+		<cora-docker-tomcat.version>2.2.0</cora-docker-tomcat.version>
+		<diva.version>8.1-SNAPSHOT</diva.version>
+
 		<outputDirectory>${project.build.directory}/docker2</outputDirectory>
 		<exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
-
-		<cora-docker-tomcat.version>2.2.0</cora-docker-tomcat.version>
-
-		<cora-metadata.version>1.1-SNAPSHOT</cora-metadata.version>
-		<diva-metadata.version>1.1-SNAPSHOT</diva-metadata.version>
-
-		<diva.version>8.1-SNAPSHOT</diva.version>
 	</properties>
 
 	<scm>
@@ -48,18 +42,6 @@
 			<version>${cora-docker-tomcat.version}</version>
 			<type>pom</type>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>se.uu.ub.cora</groupId>
-			<artifactId>cora-metadata</artifactId>
-			<version>${cora-metadata.version}</version>
-			<scope>compile</scope>
-		</dependency>
-		<dependency>
-			<groupId>se.uu.ub.cora</groupId>
-			<artifactId>diva-metadata</artifactId>
-			<version>${diva-metadata.version}</version>
-			<scope>compile</scope>
 		</dependency>
 		<dependency>
 			<groupId>se.uu.ub.cora</groupId>
@@ -105,36 +87,9 @@
 						</goals>
 						<configuration>
 							<outputDirectory>${outputDirectory}</outputDirectory>
-							<excludeArtifactIds>cora-metadata, alvin-metadata</excludeArtifactIds>
 							<overWriteReleases>true</overWriteReleases>
 							<overWriteSnapshots>true</overWriteSnapshots>
 							<overWriteIfNewer>true</overWriteIfNewer>
-						</configuration>
-					</execution>
-					<execution>
-						<id>unpack</id>
-						<phase>package</phase>
-						<goals>
-							<goal>unpack</goal>
-						</goals>
-						<configuration>
-							<artifactItems>
-								<artifactItem>
-									<groupId>se.uu.ub.cora</groupId>
-									<artifactId>cora-metadata</artifactId>
-									<version>${cora-metadata.version}</version>
-								</artifactItem>
-								<artifactItem>
-									<groupId>se.uu.ub.cora</groupId>
-									<artifactId>diva-metadata</artifactId>
-									<version>${diva-metadata.version}</version>
-								</artifactItem>
-							</artifactItems>
-							<includes>**/*.json*</includes>
-							<outputDirectory>${outputDirectory}</outputDirectory>
-							<overWrite>true</overWrite>
-							<overWriteReleases>true</overWriteReleases>
-							<overWriteSnapshots>true</overWriteSnapshots>
 						</configuration>
 					</execution>
 				</executions>
