@@ -17,7 +17,7 @@
 		override="false" />
 
 
-	<Parameter name="fedoraArchiveURL" value="http://diva-archive:8080/fcrepo/rest/" override="false" />
+	<Parameter name="fedoraArchiveURL" value="http://diva-fedora:8080/fcrepo/rest/" override="false" />
 	
 	<Parameter name="coraDatabaseLookupName" value="java:/comp/env/jdbc/coraPostgres"
 		override="false" />
