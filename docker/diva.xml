@@ -33,4 +33,6 @@
 	<Parameter name="rabbitMqPdfExchange" value="pdfConverterExchange" override="false" />
 	<Parameter name="rabbitMqRoutingKey" value="" override="false" />
 
+	<Parameter name="iiifBaseUrl"
+		value="http://diva-iiif:8080/iiif/" override="false" />
 </Context>
