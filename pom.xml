@@ -18,7 +18,7 @@
 
 	<artifactId>diva-docker-cora</artifactId>
 	<packaging>pom</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>20240226</version>
 	<name>DiVA cora docker</name>
 
 	<properties>

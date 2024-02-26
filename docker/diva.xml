@@ -13,7 +13,7 @@
 	<Parameter name="solrURL" value="http://solr:8983/solr/coracore"
 		override="false" />
 		
-	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/"
+	<Parameter name="theRestPublicPathToSystem" value="/20240226/diva/rest/"
 		override="false" />
 
 
