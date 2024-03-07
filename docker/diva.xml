@@ -13,9 +13,9 @@
 	<Parameter name="solrURL" value="http://solr:8983/solr/coracore"
 		override="false" />
 		
-	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/"
-		override="false" />
-
+	<Parameter name="theRestPublicPathToSystem" value="/diva/rest/" override="false" />
+	<Parameter name="iiifPublicPathToSystem" value="/diva/iiif/" override="false" />
+	
 
 	<Parameter name="fedoraArchiveURL" value="http://diva-fedora:8080/fcrepo/rest/" override="false" />
 	
@@ -33,6 +33,4 @@
 	<Parameter name="rabbitMqPdfExchange" value="pdfConverterExchange" override="false" />
 	<Parameter name="rabbitMqRoutingKey" value="" override="false" />
 
-	<Parameter name="iiifBaseUrl"
-		value="http://diva-iiif:8080/iiif/" override="false" />
 </Context>
