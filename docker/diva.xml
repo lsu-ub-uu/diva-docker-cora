@@ -25,6 +25,8 @@
 		driverClassName="org.postgresql.Driver"
 		url="jdbc:postgresql://diva-postgresql:5432/diva" username="diva" password="diva"
 		maxTotal="20" maxIdle="10" maxWaitMillis="-1" />
+	
+	<Parameter name="imageServerUrl" value="http://diva-iipimageserver:80/iiif/" override="false" />
 		
 	<Parameter name="rabbitMqHostname" value="diva-rabbitmq" override="false" />
 	<Parameter name="rabbitMqPort" value="5672" override="false" />
