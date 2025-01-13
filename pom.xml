@@ -13,7 +13,7 @@
 	<parent>
 		<groupId>se.uu.ub.cora</groupId>
 		<artifactId>cora-parent</artifactId>
-		<version>2.6.0</version>
+		<version>2.7.0</version>
 	</parent>
 
 	<artifactId>diva-docker-cora</artifactId>
@@ -22,11 +22,11 @@
 	<name>DiVA cora docker</name>
 
 	<properties>
-		<cora-docker-tomcat.version>2.2.0</cora-docker-tomcat.version>
+		<cora-docker-tomcat.version>2.4.0</cora-docker-tomcat.version>
 		<diva.version>8.12-SNAPSHOT</diva.version>
 
 		<outputDirectory>${project.build.directory}/docker2</outputDirectory>
-		<exec-maven-plugin.version>3.4.1</exec-maven-plugin.version>
+		<exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
 	</properties>
 
 	<scm>
