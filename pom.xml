@@ -23,7 +23,7 @@
 
 	<properties>
 		<cora-docker-tomcat.version>2.5.0</cora-docker-tomcat.version>
-		<diva.version>8.24-SNAPSHOT</diva.version>
+		<diva.version>8.25-SNAPSHOT</diva.version>
 
 		<outputDirectory>${project.build.directory}/docker2</outputDirectory>
 		<exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
