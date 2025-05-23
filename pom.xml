@@ -12,8 +12,8 @@
 
 	<parent>
 		<groupId>se.uu.ub.cora</groupId>
-		<artifactId>cora-parent</artifactId>
-		<version>2.7.0</version>
+		<artifactId>cora-parent-docker</artifactId>
+		<version>1.1.0</version>
 	</parent>
 
 	<artifactId>diva-docker-cora</artifactId>
@@ -25,8 +25,8 @@
 		<cora-docker-tomcat.version>2.5.0</cora-docker-tomcat.version>
 		<diva.version>8.28-SNAPSHOT</diva.version>
 
-		<outputDirectory>${project.build.directory}/docker2</outputDirectory>
-		<exec-maven-plugin.version>3.5.0</exec-maven-plugin.version>
+		<!-- Override property so docker-build profile activates in this module -->
+		<docker.build.activate>true</docker.build.activate>
 	</properties>
 
 	<scm>
@@ -54,26 +54,6 @@
 
 	<build>
 		<plugins>
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>copy-resources</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${outputDirectory}</outputDirectory>
-							<resources>
-								<resource>
-									<directory>docker</directory>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -111,7 +91,7 @@
 							<arguments>
 								<argument>build</argument>
 								<argument>-t</argument>
-								<argument>${project.artifactId}:${project.version}</argument>
+								<argument>${dockerNameAndVersion}</argument>
 								<argument>--build-arg</argument>
 								<argument>CORA_DOCKER_VERSION=${cora-docker-tomcat.version}</argument>
 								<argument>.</argument>
