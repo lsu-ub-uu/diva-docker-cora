@@ -22,7 +22,7 @@
 	<name>DiVA cora docker</name>
 
 	<properties>
-		<cora-docker-tomcat.version>2.5.0</cora-docker-tomcat.version>
+		<cora-docker-tomcat.version>2.6.0</cora-docker-tomcat.version>
 		<diva.version>8.28-SNAPSHOT</diva.version>
 
 		<!-- Override property so docker-build profile activates in this module -->
