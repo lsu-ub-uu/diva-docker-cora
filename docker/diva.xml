@@ -13,9 +13,11 @@
 	<Parameter name="solrURL" value="http://solr:8983/solr/coracore"
 		override="false" />
 		
-	<Parameter name="theRestPublicPathToSystem" value="${rest.to.path.system}" override="false" />
-	<Parameter name="iiifPublicPathToSystem" value="${iiif.to.path.system}" override="false" />
-	
+	<Parameter name="deploymentInfoApplicationName" value="${deploymentInfo.applicationName}" override="false" />
+	<Parameter name="deploymentInfoDeploymentName" value="${deploymentInfo.deploymentName}" override="false" />
+	<Parameter name="deploymentInfoCoraVersion" value="${deploymentInfo.coraVersion}" override="false" />
+	<Parameter name="deploymentInfoApplicationVersion" value="${deploymentInfo.applicationVersion}" override="false" />
+	<Parameter name="deploymentInfoLoginRestUrl" value="${deploymentInfo.loginRestUrl}" override="false" />
 
 	<Parameter name="fedoraArchiveURL" value="http://diva-fedora:8080/fcrepo/rest/" override="false" />
 	
