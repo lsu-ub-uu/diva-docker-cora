@@ -23,7 +23,7 @@
 
 	<properties>
 		<cora-docker-tomcat.version>2.7.0</cora-docker-tomcat.version>
-		<diva.version>8.44.0</diva.version>
+		<diva.version>8.45.0</diva.version>
 
 		<!-- Override property so docker-build profile activates in this module -->
 		<docker.build.activate>true</docker.build.activate>
