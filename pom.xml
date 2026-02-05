@@ -18,7 +18,7 @@
 
 	<artifactId>diva-docker-cora</artifactId>
 	<packaging>pom</packaging>
-	<version>1.25.0-SNAPSHOT</version>
+	<version>1.26-SNAPSHOT</version>
 	<name>DiVA cora docker</name>
 
 	<properties>
@@ -33,7 +33,7 @@
 		<connection>scm:git:https://github.com/lsu-ub-uu/diva-docker-cora.git</connection>
 		<developerConnection>scm:git:https://github.com/lsu-ub-uu/diva-docker-cora.git</developerConnection>
 		<url>https://github.com/lsu-ub-uu/diva-docker-cora.git</url>
-	  <tag>release/1.25</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<dependencies>
