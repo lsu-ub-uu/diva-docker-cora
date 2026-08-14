@@ -16,6 +16,7 @@
 	<Parameter name="deploymentInfoApplicationName" value="${deploymentInfo.applicationName}" override="false" />
 	<Parameter name="deploymentInfoDeploymentName" value="${deploymentInfo.deploymentName}" override="false" />
 	<Parameter name="deploymentInfoCoraVersion" value="${deploymentInfo.coraVersion}" override="false" />
+	<Parameter name="deploymentInfoHelmCahrtVersion" value="${deploymentInfo.helmChartVersion}" override="false" />
 	<Parameter name="deploymentInfoApplicationVersion" value="${deploymentInfo.applicationVersion}" override="false" />
 	<Parameter name="deploymentInfoLoginRestUrl" value="${deploymentInfo.loginRestUrl}" override="false" />
 
